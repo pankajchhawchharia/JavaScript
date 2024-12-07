@@ -1,0 +1,17 @@
+// waf to sort array without using sort method
+function sorting(arr) {
+    console.log("array before sorting:",arr);
+    var copyArr = arr;
+    var temp =0;
+    for (var i=0;i<arr.length;i++) {
+        for (var j=i+1;j<copyArr.length;j++) {
+            if(arr[i]>copyArr[j] ) {
+                 temp= arr[i];
+                arr[i] = copyArr[j];
+                copyArr[j] = temp;
+            }
+        }
+    }
+ return arr;
+}
+console.log("array after sorting : ",sorting([32,33,43,445,32,2323,4,3,4]));
