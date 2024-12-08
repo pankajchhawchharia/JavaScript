@@ -1,0 +1,12 @@
+// waf to find the summ of all the number multiple of 3 or 5 of the given number
+function multiple(num) {
+    let sum = 0;
+    for (i=1;i<=num;i++) {
+        if(i%3 === 0 || i%5 === 0) {
+            console.log(i);
+            sum = sum + i;
+        }
+    }
+    return sum;
+}
+console.log("sum of multple of 3 &5 : ",multiple(10));
