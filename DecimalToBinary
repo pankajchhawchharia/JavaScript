@@ -1,0 +1,19 @@
+// convert decimal to binary
+function decimalToBinary(decimal) {
+    if(decimal<0) {
+        console.log("number should be positive:",decimal);
+        // throw new Error ("The number must be a non negative integer");
+    }
+    let binary = "";
+    let num = decimal;
+    if (decimal === 0) {
+        return 0;
+    }
+    while (num > 0) {
+        binary = (num%2) + binary;
+        num = Math.floor(num/2);
+    }
+    // return decimal.toString(2);
+    return binary;
+}
+console.log("decimal to binary :",decimalToBinary(10));
