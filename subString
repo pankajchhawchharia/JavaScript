@@ -1,0 +1,31 @@
+// find a substring in a main string 
+// substr (mainStr, subStr)
+// if substring is found, then return the index position
+// if substring is not found then return -1
+// ex  substr("Hello World", "Hell") -> 0
+// ex  substr("Hello World", "lo Wo") -> 3
+// ex  substr("Hello World", "He ll") -> -1
+
+function subString(mainStr, subStr)  {
+    let mainLen = mainStr.length;
+    let subLen = subStr.length;
+    for (let i = 0; i<= mainLen - subLen; i++) {
+        let match = true;
+        for (let j = 0; j< subLen; j++) {
+            if(mainStr[i+j] !== subStr[j]) {
+                match = false;
+                break;
+            }
+        }
+        if(match) {
+            return i;
+        }
+    }
+    return -1;
+}
+// **Test Cases**
+console.log(subString("Hello World", "Hell"));  // Output: 0
+console.log(subString("Hello World", "lo Wo")); // Output: 3
+console.log(subString("Hello World", "He ll")); // Output: -1
+console.log(subString("abcdef", "def"));        // Output: 3
+console.log(subString("abcdef", "xyz"));        // Output: -1
